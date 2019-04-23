@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+<?xml version="1.0" encoding="UTF-8"?>
 <html>
-	<head>
-		<title>Poland</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>		<meta charset="UTF-8">
-	</head>
+        <head>
+                <title>Poland</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>                
+        <meta charset="UTF-8">
+        
+        </head>
     <body>
-		<h1>Official name</h1>
-		<p></p>
-
+                <h1>Official name</h1>
+                <p></p>
+ 
         <table id="poland_table" border="1">
         <tr>
             <th>Official name</th>
@@ -15,15 +18,14 @@
             <th>Countries bordering</th>
         </tr>
         </table> 
-		
-		<h1>Capital city</h1>
-		<p></p>
-
-		<h1>Countries bordering</h1>
-		<p></p>
-
+                
+                <h1>Capital city</h1>
+                <p></p>
+ 
+                <h1>Countries bordering</h1>
+                <p></p>
+ 
 <script>
-
     $(document).ready(function()
     {
         $.getJSON("poland.json", function(data)
@@ -32,14 +34,15 @@
             $.each(data, function(key, value)
             {
                 poland_data += '<tr>';
-                poland_data += '<td>' + value.official + '</td>';
+                poland_data += '<td>' + value.name.official + '</td>';
                 poland_data += '<td>' + value.capital + '</td>';
                 poland_data += '<td>' + value.borders + '</td>';
                 poland_data += '</tr>';
             });
             $('#poland_table').append(poland_data);
+            console.log( data );
         });   
     });
 </script>   
-	</body>
+        </body>
 </html>
